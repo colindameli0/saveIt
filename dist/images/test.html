@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.burger,
+		.burger:before,
+		.burger:after {
+		  position: absolute;
+		  top: 28px;
+		  left: 18px;
+		  width: 24px;
+		  height: 4px;
+		  background: #333;
+		  cursor: pointer;
+		  -webkit-transition: background 0.3s, -webkit-transform 0.3s, top 0.3s;
+		}
+
+		.burger:before {
+		  top: -8px;
+		  left: 0;
+		  content: "";
+		}
+
+		.burger:after {
+		  top: 8px;
+		  left: 0;
+		  content: "";
+		}
+
+		.open .burger {
+		  background: transparent;
+		}
+
+		.open .burger:before {
+		  top: 0;
+		  -webkit-transform: rotate3d(0, 0, 1, -45deg);
+		}
+
+		.open .burger:after {
+		  top: 0;
+		  -webkit-transform: rotate3d(0, 0, 1, 45deg);
+		}
+
+
+	</style>
+</head>
+<body>
+
+<div class="burger-box">
+  <div class="burger"></div>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+	
+	$(function() {
+	$('.burger-box').click(function(e) {
+	  e.preventDefault();
+	  $(this).toggleClass('open');
+	});
+	});
+
+</script>
+	
+</body>
+</html>
